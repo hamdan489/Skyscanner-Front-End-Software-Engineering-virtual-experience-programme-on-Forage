@@ -1,0 +1,62 @@
+@import '~bpk-mixins';
+
+@mixin container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+}
+
+$bpk-spacing-lg: 16px; // Example value, replace with the actual value from Backpack tokens
+$bpk-spacing-xl: 20px; // Example value
+$bpk-spacing-xxl: 24px; // Example value
+$bpk-spacing-sm: 8px; // Example value
+$bpk-spacing-base: 12px; // Example value
+$bpk-color-sky-blue: $bpk-color-sky-blue; // Example value
+$bpk-color-white: $bpk-color-white; // Example value
+$bpk-primary-gradient: $bpk-primary-gradient; // Example value
+
+.App {
+  text-align: center;
+
+  &__header {
+    padding: $bpk-spacing-lg * 2;
+    background-color: $bpk-color-sky-blue;
+    background-image: $bpk-primary-gradient;
+    color: $bpk-color-white;
+
+    @include bpk-box-shadow-sm;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-xl;
+    }
+  }
+
+  &__header-inner {
+    @include container;
+  }
+
+  &__main {
+    padding: $bpk-spacing-xxl;
+
+    @include container;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-base;
+    }
+  }
+
+  &__heading {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__text {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__calendar-container {
+    margin-bottom: $bpk-spacing-lg;
+  }
+
+  &__button-container {
+    align-self: $bpk-spacing-lg;
+  }
+}
